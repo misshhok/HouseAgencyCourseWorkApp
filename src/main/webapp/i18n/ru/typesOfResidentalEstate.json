@@ -1,0 +1,24 @@
+{
+  "agencyCourseWorkApp": {
+    "typesOfResidentalEstate": {
+      "home": {
+        "title": "Types Of Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Types Of Residental Estate",
+        "createOrEditLabel": "Создать или отредактировать Types Of Residental Estate",
+        "notFound": "Types Of Residental Estates не найдено"
+      },
+      "created": "Новый Types Of Residental Estate создан с идентификатором {{ param }}",
+      "updated": "Types Of Residental Estate обновлен с идентификатором {{ param }}",
+      "deleted": "Types Of Residental Estate удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Types Of Residental Estate {{ id }}?"
+      },
+      "detail": {
+        "title": "Types Of Residental Estate"
+      },
+      "id": "ID",
+      "title": "Title"
+    }
+  }
+}

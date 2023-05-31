@@ -1,0 +1,28 @@
+{
+  "agencyCourseWorkApp": {
+    "comercialEventsOfNonResidentalEstate": {
+      "home": {
+        "title": "Comercial Events Of Non Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Comercial Events Of Non Residental Estate",
+        "createOrEditLabel": "Создать или отредактировать Comercial Events Of Non Residental Estate",
+        "notFound": "Comercial Events Of Non Residental Estates не найдено"
+      },
+      "created": "Новый Comercial Events Of Non Residental Estate создан с идентификатором {{ param }}",
+      "updated": "Comercial Events Of Non Residental Estate обновлен с идентификатором {{ param }}",
+      "deleted": "Comercial Events Of Non Residental Estate удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Comercial Events Of Non Residental Estate {{ id }}?"
+      },
+      "detail": {
+        "title": "Comercial Events Of Non Residental Estate"
+      },
+      "id": "ID",
+      "agentNotes": "Agent Notes",
+      "dateOfEvent": "Date Of Event",
+      "typeOfCommercialEventId": "Type Of Commercial Event Id",
+      "nonResidentalEstateId": "Non Residental Estate Id",
+      "clientId": "Client Id"
+    }
+  }
+}

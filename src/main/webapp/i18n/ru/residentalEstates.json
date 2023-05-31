@@ -1,0 +1,35 @@
+{
+  "agencyCourseWorkApp": {
+    "residentalEstates": {
+      "home": {
+        "title": "Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Residental Estates",
+        "createOrEditLabel": "Создать или отредактировать Residental Estates",
+        "notFound": "Residental Estates не найдено"
+      },
+      "created": "Новый Residental Estates создан с идентификатором {{ param }}",
+      "updated": "Residental Estates обновлен с идентификатором {{ param }}",
+      "deleted": "Residental Estates удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Residental Estates {{ id }}?"
+      },
+      "detail": {
+        "title": "Residental Estates"
+      },
+      "id": "ID",
+      "livingSpace": "Living Space",
+      "cadastralNumber": "Cadastral Number",
+      "commissioningDate": "Commissioning Date",
+      "numberOfRooms": "Number Of Rooms",
+      "furnishType": "Furnish Type",
+      "hasBalcony": "Has Balcony",
+      "bathroomType": "Bathroom Type",
+      "ceilingHeight": "Ceiling Height",
+      "price": "Price",
+      "addressId": "Address Id",
+      "typeOfResidentalEstateId": "Type Of Residental Estate Id",
+      "statusOfResidentalEstateId": "Status Of Residental Estate Id"
+    }
+  }
+}

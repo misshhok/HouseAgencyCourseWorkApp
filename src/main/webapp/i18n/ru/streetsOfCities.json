@@ -1,0 +1,25 @@
+{
+  "agencyCourseWorkApp": {
+    "streetsOfCities": {
+      "home": {
+        "title": "Streets Of Cities",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Streets Of Cities",
+        "createOrEditLabel": "Создать или отредактировать Streets Of Cities",
+        "notFound": "Streets Of Cities не найдено"
+      },
+      "created": "Новый Streets Of Cities создан с идентификатором {{ param }}",
+      "updated": "Streets Of Cities обновлен с идентификатором {{ param }}",
+      "deleted": "Streets Of Cities удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Streets Of Cities {{ id }}?"
+      },
+      "detail": {
+        "title": "Streets Of Cities"
+      },
+      "id": "ID",
+      "title": "Title",
+      "cityId": "City Id"
+    }
+  }
+}

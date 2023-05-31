@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity NonResidentalEstates.
+    -->
+    <changeSet id="20230531001313-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="purpose_of_non_residental_estate_id_id"
+                                 baseTableName="non_residental_estates"
+                                 constraintName="fk_non_residental_estates__purpose_of_non_residental_esta_71_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="purposes_of_non_residental_estate"/>
+
+        <addForeignKeyConstraint baseColumnNames="building_type_of_non_residental_estate_id_id"
+                                 baseTableName="non_residental_estates"
+                                 constraintName="fk_non_residental_estates__building_type_of_non_residenta_ac_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="building_type_of_non_residental_estate"/>
+
+        <addForeignKeyConstraint baseColumnNames="address_id_id"
+                                 baseTableName="non_residental_estates"
+                                 constraintName="fk_non_residental_estates__address_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="addresses"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,24 @@
+{
+  "agencyCourseWorkApp": {
+    "cities": {
+      "home": {
+        "title": "Cities",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Cities",
+        "createOrEditLabel": "Создать или отредактировать Cities",
+        "notFound": "Cities не найдено"
+      },
+      "created": "Новый Cities создан с идентификатором {{ param }}",
+      "updated": "Cities обновлен с идентификатором {{ param }}",
+      "deleted": "Cities удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Cities {{ id }}?"
+      },
+      "detail": {
+        "title": "Cities"
+      },
+      "id": "ID",
+      "title": "Title"
+    }
+  }
+}

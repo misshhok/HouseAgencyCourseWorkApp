@@ -1,0 +1,30 @@
+{
+  "agencyCourseWorkApp": {
+    "nonResidentalEstates": {
+      "home": {
+        "title": "Non Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Non Residental Estates",
+        "createOrEditLabel": "Создать или отредактировать Non Residental Estates",
+        "notFound": "Non Residental Estates не найдено"
+      },
+      "created": "Новый Non Residental Estates создан с идентификатором {{ param }}",
+      "updated": "Non Residental Estates обновлен с идентификатором {{ param }}",
+      "deleted": "Non Residental Estates удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Non Residental Estates {{ id }}?"
+      },
+      "detail": {
+        "title": "Non Residental Estates"
+      },
+      "id": "ID",
+      "price": "Price",
+      "commissioningDate": "Commissioning Date",
+      "cadastralNumber": "Cadastral Number",
+      "totalSpace": "Total Space",
+      "purposeOfNonResidentalEstateId": "Purpose Of Non Residental Estate Id",
+      "buildingTypeOfNonResidentalEstateId": "Building Type Of Non Residental Estate Id",
+      "addressId": "Address Id"
+    }
+  }
+}

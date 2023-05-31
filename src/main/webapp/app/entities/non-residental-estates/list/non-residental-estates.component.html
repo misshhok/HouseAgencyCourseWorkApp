@@ -1,0 +1,175 @@
+<div>
+  <h2 id="page-heading" data-cy="NonResidentalEstatesHeading">
+    <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.home.title">Non Residental Estates</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.home.refreshListLabel">Обновить список</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-non-residental-estates"
+        [routerLink]="['/non-residental-estates/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.home.createLabel"> Создать новый Non Residental Estates </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="nonResidentalEstates?.length === 0">
+    <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.home.notFound">Non Residental Estates не найдено</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="nonResidentalEstates && nonResidentalEstates.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="price">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.price">Price</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="commissioningDate">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.commissioningDate">Commissioning Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cadastralNumber">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.cadastralNumber">Cadastral Number</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="totalSpace">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.totalSpace">Total Space</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="purposeOfNonResidentalEstateId.id">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.purposeOfNonResidentalEstateId"
+                >Purpose Of Non Residental Estate Id</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="buildingTypeOfNonResidentalEstateId.id">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.buildingTypeOfNonResidentalEstateId"
+                >Building Type Of Non Residental Estate Id</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="addressId.id">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.addressId">Address Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let nonResidentalEstates of nonResidentalEstates; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/non-residental-estates', nonResidentalEstates.id, 'view']">{{ nonResidentalEstates.id }}</a>
+          </td>
+          <td>{{ nonResidentalEstates.price }}</td>
+          <td>{{ nonResidentalEstates.commissioningDate | formatMediumDate }}</td>
+          <td>{{ nonResidentalEstates.cadastralNumber }}</td>
+          <td>{{ nonResidentalEstates.totalSpace }}</td>
+          <td>
+            <div *ngIf="nonResidentalEstates.purposeOfNonResidentalEstateId">
+              <a [routerLink]="['/purposes-of-non-residental-estate', nonResidentalEstates.purposeOfNonResidentalEstateId.id, 'view']">{{
+                nonResidentalEstates.purposeOfNonResidentalEstateId.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="nonResidentalEstates.buildingTypeOfNonResidentalEstateId">
+              <a
+                [routerLink]="[
+                  '/building-type-of-non-residental-estate',
+                  nonResidentalEstates.buildingTypeOfNonResidentalEstateId.id,
+                  'view'
+                ]"
+                >{{ nonResidentalEstates.buildingTypeOfNonResidentalEstateId.id }}</a
+              >
+            </div>
+          </td>
+          <td>
+            <div *ngIf="nonResidentalEstates.addressId">
+              <a [routerLink]="['/addresses', nonResidentalEstates.addressId.id, 'view']">{{ nonResidentalEstates.addressId.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/non-residental-estates', nonResidentalEstates.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Просмотр</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/non-residental-estates', nonResidentalEstates.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Изменить</span>
+              </button>
+
+              <button type="submit" (click)="delete(nonResidentalEstates)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Удалить</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="nonResidentalEstates && nonResidentalEstates.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

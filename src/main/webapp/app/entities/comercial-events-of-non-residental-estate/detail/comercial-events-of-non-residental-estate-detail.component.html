@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="comercialEventsOfNonResidentalEstate">
+      <h2 data-cy="comercialEventsOfNonResidentalEstateDetailsHeading">
+        <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.detail.title"
+          >Comercial Events Of Non Residental Estate</span
+        >
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ comercialEventsOfNonResidentalEstate.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.agentNotes">Agent Notes</span></dt>
+        <dd>
+          <span>{{ comercialEventsOfNonResidentalEstate.agentNotes }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.dateOfEvent">Date Of Event</span></dt>
+        <dd>
+          <span>{{ comercialEventsOfNonResidentalEstate.dateOfEvent | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.typeOfCommercialEventId"
+            >Type Of Commercial Event Id</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="comercialEventsOfNonResidentalEstate.typeOfCommercialEventId">
+            <a [routerLink]="['/types-of-commercial-events', comercialEventsOfNonResidentalEstate.typeOfCommercialEventId.id, 'view']">{{
+              comercialEventsOfNonResidentalEstate.typeOfCommercialEventId.id
+            }}</a>
+          </div>
+        </dd>
+        <dt>
+          <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.nonResidentalEstateId"
+            >Non Residental Estate Id</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="comercialEventsOfNonResidentalEstate.nonResidentalEstateId">
+            <a [routerLink]="['/non-residental-estates', comercialEventsOfNonResidentalEstate.nonResidentalEstateId.id, 'view']">{{
+              comercialEventsOfNonResidentalEstate.nonResidentalEstateId.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.clientId">Client Id</span></dt>
+        <dd>
+          <div *ngIf="comercialEventsOfNonResidentalEstate.clientId">
+            <a [routerLink]="['/clients', comercialEventsOfNonResidentalEstate.clientId.id, 'view']">{{
+              comercialEventsOfNonResidentalEstate.clientId.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Назад</span>
+      </button>
+
+      <button
+        type="button"
+        [routerLink]="['/comercial-events-of-non-residental-estate', comercialEventsOfNonResidentalEstate.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Изменить</span>
+      </button>
+    </div>
+  </div>
+</div>

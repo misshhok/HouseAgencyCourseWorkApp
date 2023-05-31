@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="comercialEventsOfResidentalEstate">
+      <h2 data-cy="comercialEventsOfResidentalEstateDetailsHeading">
+        <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.detail.title">Comercial Events Of Residental Estate</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ comercialEventsOfResidentalEstate.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.agentNotes">Agent Notes</span></dt>
+        <dd>
+          <span>{{ comercialEventsOfResidentalEstate.agentNotes }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.dateOfEvent">Date Of Event</span></dt>
+        <dd>
+          <span>{{ comercialEventsOfResidentalEstate.dateOfEvent | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.typeOfCommercialEventId"
+            >Type Of Commercial Event Id</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="comercialEventsOfResidentalEstate.typeOfCommercialEventId">
+            <a [routerLink]="['/types-of-commercial-events', comercialEventsOfResidentalEstate.typeOfCommercialEventId.id, 'view']">{{
+              comercialEventsOfResidentalEstate.typeOfCommercialEventId.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.clientId">Client Id</span></dt>
+        <dd>
+          <div *ngIf="comercialEventsOfResidentalEstate.clientId">
+            <a [routerLink]="['/clients', comercialEventsOfResidentalEstate.clientId.id, 'view']">{{
+              comercialEventsOfResidentalEstate.clientId.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.residentalEstateId">Residental Estate Id</span></dt>
+        <dd>
+          <div *ngIf="comercialEventsOfResidentalEstate.residentalEstateId">
+            <a [routerLink]="['/residental-estates', comercialEventsOfResidentalEstate.residentalEstateId.id, 'view']">{{
+              comercialEventsOfResidentalEstate.residentalEstateId.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Назад</span>
+      </button>
+
+      <button
+        type="button"
+        [routerLink]="['/comercial-events-of-residental-estate', comercialEventsOfResidentalEstate.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Изменить</span>
+      </button>
+    </div>
+  </div>
+</div>

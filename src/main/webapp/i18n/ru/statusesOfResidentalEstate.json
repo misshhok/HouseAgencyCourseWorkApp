@@ -1,0 +1,24 @@
+{
+  "agencyCourseWorkApp": {
+    "statusesOfResidentalEstate": {
+      "home": {
+        "title": "Statuses Of Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Statuses Of Residental Estate",
+        "createOrEditLabel": "Создать или отредактировать Statuses Of Residental Estate",
+        "notFound": "Statuses Of Residental Estates не найдено"
+      },
+      "created": "Новый Statuses Of Residental Estate создан с идентификатором {{ param }}",
+      "updated": "Statuses Of Residental Estate обновлен с идентификатором {{ param }}",
+      "deleted": "Statuses Of Residental Estate удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Statuses Of Residental Estate {{ id }}?"
+      },
+      "detail": {
+        "title": "Statuses Of Residental Estate"
+      },
+      "id": "ID",
+      "title": "Title"
+    }
+  }
+}

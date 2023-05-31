@@ -1,0 +1,88 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="residentalEstates">
+      <h2 data-cy="residentalEstatesDetailsHeading">
+        <span jhiTranslate="agencyCourseWorkApp.residentalEstates.detail.title">Residental Estates</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ residentalEstates.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.livingSpace">Living Space</span></dt>
+        <dd>
+          <span>{{ residentalEstates.livingSpace }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.cadastralNumber">Cadastral Number</span></dt>
+        <dd>
+          <span>{{ residentalEstates.cadastralNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.commissioningDate">Commissioning Date</span></dt>
+        <dd>
+          <span>{{ residentalEstates.commissioningDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.numberOfRooms">Number Of Rooms</span></dt>
+        <dd>
+          <span>{{ residentalEstates.numberOfRooms }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.furnishType">Furnish Type</span></dt>
+        <dd>
+          <span>{{ residentalEstates.furnishType }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.hasBalcony">Has Balcony</span></dt>
+        <dd>
+          <span>{{ residentalEstates.hasBalcony }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.bathroomType">Bathroom Type</span></dt>
+        <dd>
+          <span>{{ residentalEstates.bathroomType }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.ceilingHeight">Ceiling Height</span></dt>
+        <dd>
+          <span>{{ residentalEstates.ceilingHeight }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.price">Price</span></dt>
+        <dd>
+          <span>{{ residentalEstates.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.addressId">Address Id</span></dt>
+        <dd>
+          <div *ngIf="residentalEstates.addressId">
+            <a [routerLink]="['/addresses', residentalEstates.addressId.id, 'view']">{{ residentalEstates.addressId.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.typeOfResidentalEstateId">Type Of Residental Estate Id</span></dt>
+        <dd>
+          <div *ngIf="residentalEstates.typeOfResidentalEstateId">
+            <a [routerLink]="['/types-of-residental-estate', residentalEstates.typeOfResidentalEstateId.id, 'view']">{{
+              residentalEstates.typeOfResidentalEstateId.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.residentalEstates.statusOfResidentalEstateId">Status Of Residental Estate Id</span></dt>
+        <dd>
+          <div *ngIf="residentalEstates.statusOfResidentalEstateId">
+            <a [routerLink]="['/statuses-of-residental-estate', residentalEstates.statusOfResidentalEstateId.id, 'view']">{{
+              residentalEstates.statusOfResidentalEstateId.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Назад</span>
+      </button>
+
+      <button type="button" [routerLink]="['/residental-estates', residentalEstates.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Изменить</span>
+      </button>
+    </div>
+  </div>
+</div>

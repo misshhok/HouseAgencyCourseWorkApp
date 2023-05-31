@@ -1,0 +1,81 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="nonResidentalEstates">
+      <h2 data-cy="nonResidentalEstatesDetailsHeading">
+        <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.detail.title">Non Residental Estates</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ nonResidentalEstates.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.price">Price</span></dt>
+        <dd>
+          <span>{{ nonResidentalEstates.price }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.commissioningDate">Commissioning Date</span></dt>
+        <dd>
+          <span>{{ nonResidentalEstates.commissioningDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.cadastralNumber">Cadastral Number</span></dt>
+        <dd>
+          <span>{{ nonResidentalEstates.cadastralNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.totalSpace">Total Space</span></dt>
+        <dd>
+          <span>{{ nonResidentalEstates.totalSpace }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.purposeOfNonResidentalEstateId"
+            >Purpose Of Non Residental Estate Id</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="nonResidentalEstates.purposeOfNonResidentalEstateId">
+            <a [routerLink]="['/purposes-of-non-residental-estate', nonResidentalEstates.purposeOfNonResidentalEstateId.id, 'view']">{{
+              nonResidentalEstates.purposeOfNonResidentalEstateId.id
+            }}</a>
+          </div>
+        </dd>
+        <dt>
+          <span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.buildingTypeOfNonResidentalEstateId"
+            >Building Type Of Non Residental Estate Id</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="nonResidentalEstates.buildingTypeOfNonResidentalEstateId">
+            <a
+              [routerLink]="[
+                '/building-type-of-non-residental-estate',
+                nonResidentalEstates.buildingTypeOfNonResidentalEstateId.id,
+                'view'
+              ]"
+              >{{ nonResidentalEstates.buildingTypeOfNonResidentalEstateId.id }}</a
+            >
+          </div>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.addressId">Address Id</span></dt>
+        <dd>
+          <div *ngIf="nonResidentalEstates.addressId">
+            <a [routerLink]="['/addresses', nonResidentalEstates.addressId.id, 'view']">{{ nonResidentalEstates.addressId.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Назад</span>
+      </button>
+
+      <button type="button" [routerLink]="['/non-residental-estates', nonResidentalEstates.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Изменить</span>
+      </button>
+    </div>
+  </div>
+</div>

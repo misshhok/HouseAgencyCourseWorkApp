@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity ComercialEventsOfResidentalEstate.
+    -->
+    <changeSet id="20230531002639-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="type_of_commercial_event_id_id"
+                                 baseTableName="comercial_events_of_residental_estate"
+                                 constraintName="fk_comercial_events_of_resident__type_of_commercial_event_35_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="types_of_commercial_events"/>
+
+        <addForeignKeyConstraint baseColumnNames="client_id_id"
+                                 baseTableName="comercial_events_of_residental_estate"
+                                 constraintName="fk_comercial_events_of_residental_estate__client_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="clients"/>
+
+        <addForeignKeyConstraint baseColumnNames="residental_estate_id_id"
+                                 baseTableName="comercial_events_of_residental_estate"
+                                 constraintName="fk_comercial_events_of_resident__residental_estate_id_39_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="residental_estates"/>
+    </changeSet>
+</databaseChangeLog>

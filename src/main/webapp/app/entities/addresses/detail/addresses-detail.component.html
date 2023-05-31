@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="addresses">
+      <h2 data-cy="addressesDetailsHeading"><span jhiTranslate="agencyCourseWorkApp.addresses.detail.title">Addresses</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ addresses.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.addresses.houseNumber">House Number</span></dt>
+        <dd>
+          <span>{{ addresses.houseNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.addresses.streetOfCityId">Street Of City Id</span></dt>
+        <dd>
+          <div *ngIf="addresses.streetOfCityId">
+            <a [routerLink]="['/streets-of-cities', addresses.streetOfCityId.id, 'view']">{{ addresses.streetOfCityId.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Назад</span>
+      </button>
+
+      <button type="button" [routerLink]="['/addresses', addresses.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Изменить</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-non-residental-estates-heading"
+        data-cy="NonResidentalEstatesCreateUpdateHeading"
+        jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.home.createOrEditLabel"
+      >
+        Создать или отредактировать Non Residental Estates
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.price" for="field_price">Price</label>
+          <input type="number" class="form-control" name="price" id="field_price" data-cy="price" formControlName="price" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.commissioningDate" for="field_commissioningDate"
+            >Commissioning Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_commissioningDate"
+              data-cy="commissioningDate"
+              type="text"
+              class="form-control"
+              name="commissioningDate"
+              ngbDatepicker
+              #commissioningDateDp="ngbDatepicker"
+              formControlName="commissioningDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="commissioningDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.cadastralNumber" for="field_cadastralNumber"
+            >Cadastral Number</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="cadastralNumber"
+            id="field_cadastralNumber"
+            data-cy="cadastralNumber"
+            formControlName="cadastralNumber"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.totalSpace" for="field_totalSpace"
+            >Total Space</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="totalSpace"
+            id="field_totalSpace"
+            data-cy="totalSpace"
+            formControlName="totalSpace"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.purposeOfNonResidentalEstateId"
+            for="field_purposeOfNonResidentalEstateId"
+            >Purpose Of Non Residental Estate Id</label
+          >
+          <select
+            class="form-control"
+            id="field_purposeOfNonResidentalEstateId"
+            data-cy="purposeOfNonResidentalEstateId"
+            name="purposeOfNonResidentalEstateId"
+            formControlName="purposeOfNonResidentalEstateId"
+            [compareWith]="comparePurposesOfNonResidentalEstate"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="purposesOfNonResidentalEstateOption"
+              *ngFor="let purposesOfNonResidentalEstateOption of purposesOfNonResidentalEstatesSharedCollection"
+            >
+              {{ purposesOfNonResidentalEstateOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.buildingTypeOfNonResidentalEstateId"
+            for="field_buildingTypeOfNonResidentalEstateId"
+            >Building Type Of Non Residental Estate Id</label
+          >
+          <select
+            class="form-control"
+            id="field_buildingTypeOfNonResidentalEstateId"
+            data-cy="buildingTypeOfNonResidentalEstateId"
+            name="buildingTypeOfNonResidentalEstateId"
+            formControlName="buildingTypeOfNonResidentalEstateId"
+            [compareWith]="compareBuildingTypeOfNonResidentalEstate"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="buildingTypeOfNonResidentalEstateOption"
+              *ngFor="let buildingTypeOfNonResidentalEstateOption of buildingTypeOfNonResidentalEstatesSharedCollection"
+            >
+              {{ buildingTypeOfNonResidentalEstateOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="agencyCourseWorkApp.nonResidentalEstates.addressId" for="field_addressId"
+            >Address Id</label
+          >
+          <select
+            class="form-control"
+            id="field_addressId"
+            data-cy="addressId"
+            name="addressId"
+            formControlName="addressId"
+            [compareWith]="compareAddresses"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="addressesOption" *ngFor="let addressesOption of addressesSharedCollection">{{ addressesOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Отмена</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Сохранить</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

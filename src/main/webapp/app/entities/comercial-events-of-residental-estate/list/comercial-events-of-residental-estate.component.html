@@ -1,0 +1,171 @@
+<div>
+  <h2 id="page-heading" data-cy="ComercialEventsOfResidentalEstateHeading">
+    <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.home.title">Comercial Events Of Residental Estates</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.home.refreshListLabel">Обновить список</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-comercial-events-of-residental-estate"
+        [routerLink]="['/comercial-events-of-residental-estate/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.home.createLabel">
+          Создать новый Comercial Events Of Residental Estate
+        </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <jhi-filter [filters]="filters"></jhi-filter>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="comercialEventsOfResidentalEstates?.length === 0">
+    <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.home.notFound"
+      >Comercial Events Of Residental Estates не найдено</span
+    >
+  </div>
+
+  <div
+    class="table-responsive table-entities"
+    id="entities"
+    *ngIf="comercialEventsOfResidentalEstates && comercialEventsOfResidentalEstates.length > 0"
+  >
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="agentNotes">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.agentNotes">Agent Notes</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dateOfEvent">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.dateOfEvent">Date Of Event</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="typeOfCommercialEventId.id">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.typeOfCommercialEventId"
+                >Type Of Commercial Event Id</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clientId.id">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.clientId">Client Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="residentalEstateId.id">
+            <div class="d-flex">
+              <span jhiTranslate="agencyCourseWorkApp.comercialEventsOfResidentalEstate.residentalEstateId">Residental Estate Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comercialEventsOfResidentalEstate of comercialEventsOfResidentalEstates; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/comercial-events-of-residental-estate', comercialEventsOfResidentalEstate.id, 'view']">{{
+              comercialEventsOfResidentalEstate.id
+            }}</a>
+          </td>
+          <td>{{ comercialEventsOfResidentalEstate.agentNotes }}</td>
+          <td>{{ comercialEventsOfResidentalEstate.dateOfEvent | formatMediumDate }}</td>
+          <td>
+            <div *ngIf="comercialEventsOfResidentalEstate.typeOfCommercialEventId">
+              <a [routerLink]="['/types-of-commercial-events', comercialEventsOfResidentalEstate.typeOfCommercialEventId.id, 'view']">{{
+                comercialEventsOfResidentalEstate.typeOfCommercialEventId.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="comercialEventsOfResidentalEstate.clientId">
+              <a [routerLink]="['/clients', comercialEventsOfResidentalEstate.clientId.id, 'view']">{{
+                comercialEventsOfResidentalEstate.clientId.id
+              }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="comercialEventsOfResidentalEstate.residentalEstateId">
+              <a [routerLink]="['/residental-estates', comercialEventsOfResidentalEstate.residentalEstateId.id, 'view']">{{
+                comercialEventsOfResidentalEstate.residentalEstateId.id
+              }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/comercial-events-of-residental-estate', comercialEventsOfResidentalEstate.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Просмотр</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/comercial-events-of-residental-estate', comercialEventsOfResidentalEstate.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Изменить</span>
+              </button>
+
+              <button
+                type="submit"
+                (click)="delete(comercialEventsOfResidentalEstate)"
+                class="btn btn-danger btn-sm"
+                data-cy="entityDeleteButton"
+              >
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Удалить</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="comercialEventsOfResidentalEstates && comercialEventsOfResidentalEstates.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

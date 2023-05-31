@@ -1,0 +1,24 @@
+{
+  "agencyCourseWorkApp": {
+    "buildingTypeOfNonResidentalEstate": {
+      "home": {
+        "title": "Building Type Of Non Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Building Type Of Non Residental Estate",
+        "createOrEditLabel": "Создать или отредактировать Building Type Of Non Residental Estate",
+        "notFound": "Building Type Of Non Residental Estates не найдено"
+      },
+      "created": "Новый Building Type Of Non Residental Estate создан с идентификатором {{ param }}",
+      "updated": "Building Type Of Non Residental Estate обновлен с идентификатором {{ param }}",
+      "deleted": "Building Type Of Non Residental Estate удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Building Type Of Non Residental Estate {{ id }}?"
+      },
+      "detail": {
+        "title": "Building Type Of Non Residental Estate"
+      },
+      "id": "ID",
+      "title": "Title"
+    }
+  }
+}

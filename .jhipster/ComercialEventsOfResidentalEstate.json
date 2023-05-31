@@ -1,0 +1,43 @@
+{
+  "changelogDate": "20230531002639",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "agentNotes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfEvent",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": []
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "ComercialEventsOfResidentalEstate",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "typesOfCommercialEvents",
+      "relationshipName": "typeOfCommercialEventId",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": []
+    },
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "clients",
+      "relationshipName": "clientId",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": []
+    },
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "residentalEstates",
+      "relationshipName": "residentalEstateId",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": []
+    }
+  ],
+  "service": "serviceImpl"
+}

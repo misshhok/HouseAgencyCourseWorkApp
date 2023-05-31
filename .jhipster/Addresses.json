@@ -1,0 +1,25 @@
+{
+  "changelogDate": "20230530225031",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "houseNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": []
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Addresses",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "id",
+      "otherEntityName": "streetsOfCities",
+      "relationshipName": "streetOfCityId",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": []
+    }
+  ],
+  "service": "serviceImpl"
+}

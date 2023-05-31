@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql"/>
+    <property name="clobType" value="longvarchar" dbms="postgresql"/>
+    <property name="blobType" value="bytea" dbms="postgresql"/>
+    <property name="uuidType" value="uuid" dbms="postgresql"/>
+    <property name="datetimeType" value="datetime" dbms="postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530224429_added_entity_Cities.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530224652_added_entity_StreetsOfCities.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530225031_added_entity_Addresses.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530225255_added_entity_TypesOfResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530230128_added_entity_StatusesOfResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530230419_added_entity_PurposesOfNonResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530230729_added_entity_BuildingTypeOfNonResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530232653_added_entity_TypesOfCommercialEvents.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530232941_added_entity_Clients.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531000604_added_entity_ResidentalEstates.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531001313_added_entity_NonResidentalEstates.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531001937_added_entity_ComercialEventsOfNonResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531002639_added_entity_ComercialEventsOfResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20230530224652_added_entity_constraints_StreetsOfCities.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230530225031_added_entity_constraints_Addresses.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531000604_added_entity_constraints_ResidentalEstates.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531001313_added_entity_constraints_NonResidentalEstates.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531001937_added_entity_constraints_ComercialEventsOfNonResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230531002639_added_entity_constraints_ComercialEventsOfResidentalEstate.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

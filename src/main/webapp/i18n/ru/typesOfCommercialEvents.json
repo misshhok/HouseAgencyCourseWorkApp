@@ -1,0 +1,26 @@
+{
+  "agencyCourseWorkApp": {
+    "typesOfCommercialEvents": {
+      "home": {
+        "title": "Types Of Commercial Events",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Types Of Commercial Events",
+        "createOrEditLabel": "Создать или отредактировать Types Of Commercial Events",
+        "notFound": "Types Of Commercial Events не найдено"
+      },
+      "created": "Новый Types Of Commercial Events создан с идентификатором {{ param }}",
+      "updated": "Types Of Commercial Events обновлен с идентификатором {{ param }}",
+      "deleted": "Types Of Commercial Events удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Types Of Commercial Events {{ id }}?"
+      },
+      "detail": {
+        "title": "Types Of Commercial Events"
+      },
+      "id": "ID",
+      "title": "Title",
+      "description": "Description",
+      "estateType": "Estate Type"
+    }
+  }
+}

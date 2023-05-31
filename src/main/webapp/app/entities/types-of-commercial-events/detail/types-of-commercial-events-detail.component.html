@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="typesOfCommercialEvents">
+      <h2 data-cy="typesOfCommercialEventsDetailsHeading">
+        <span jhiTranslate="agencyCourseWorkApp.typesOfCommercialEvents.detail.title">Types Of Commercial Events</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ typesOfCommercialEvents.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.typesOfCommercialEvents.title">Title</span></dt>
+        <dd>
+          <span>{{ typesOfCommercialEvents.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.typesOfCommercialEvents.description">Description</span></dt>
+        <dd>
+          <span>{{ typesOfCommercialEvents.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="agencyCourseWorkApp.typesOfCommercialEvents.estateType">Estate Type</span></dt>
+        <dd>
+          <span>{{ typesOfCommercialEvents.estateType }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Назад</span>
+      </button>
+
+      <button type="button" [routerLink]="['/types-of-commercial-events', typesOfCommercialEvents.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Изменить</span>
+      </button>
+    </div>
+  </div>
+</div>

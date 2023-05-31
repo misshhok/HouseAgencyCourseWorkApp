@@ -1,0 +1,24 @@
+{
+  "agencyCourseWorkApp": {
+    "purposesOfNonResidentalEstate": {
+      "home": {
+        "title": "Purposes Of Non Residental Estates",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Purposes Of Non Residental Estate",
+        "createOrEditLabel": "Создать или отредактировать Purposes Of Non Residental Estate",
+        "notFound": "Purposes Of Non Residental Estates не найдено"
+      },
+      "created": "Новый Purposes Of Non Residental Estate создан с идентификатором {{ param }}",
+      "updated": "Purposes Of Non Residental Estate обновлен с идентификатором {{ param }}",
+      "deleted": "Purposes Of Non Residental Estate удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Purposes Of Non Residental Estate {{ id }}?"
+      },
+      "detail": {
+        "title": "Purposes Of Non Residental Estate"
+      },
+      "id": "ID",
+      "title": "Title"
+    }
+  }
+}

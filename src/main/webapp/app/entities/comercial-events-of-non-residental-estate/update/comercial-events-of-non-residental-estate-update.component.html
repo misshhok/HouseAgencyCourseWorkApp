@@ -1,0 +1,143 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-comercial-events-of-non-residental-estate-heading"
+        data-cy="ComercialEventsOfNonResidentalEstateCreateUpdateHeading"
+        jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.home.createOrEditLabel"
+      >
+        Создать или отредактировать Comercial Events Of Non Residental Estate
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.agentNotes"
+            for="field_agentNotes"
+            >Agent Notes</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="agentNotes"
+            id="field_agentNotes"
+            data-cy="agentNotes"
+            formControlName="agentNotes"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.dateOfEvent"
+            for="field_dateOfEvent"
+            >Date Of Event</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateOfEvent"
+              data-cy="dateOfEvent"
+              type="text"
+              class="form-control"
+              name="dateOfEvent"
+              ngbDatepicker
+              #dateOfEventDp="ngbDatepicker"
+              formControlName="dateOfEvent"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateOfEventDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.typeOfCommercialEventId"
+            for="field_typeOfCommercialEventId"
+            >Type Of Commercial Event Id</label
+          >
+          <select
+            class="form-control"
+            id="field_typeOfCommercialEventId"
+            data-cy="typeOfCommercialEventId"
+            name="typeOfCommercialEventId"
+            formControlName="typeOfCommercialEventId"
+            [compareWith]="compareTypesOfCommercialEvents"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="typesOfCommercialEventsOption"
+              *ngFor="let typesOfCommercialEventsOption of typesOfCommercialEventsSharedCollection"
+            >
+              {{ typesOfCommercialEventsOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.nonResidentalEstateId"
+            for="field_nonResidentalEstateId"
+            >Non Residental Estate Id</label
+          >
+          <select
+            class="form-control"
+            id="field_nonResidentalEstateId"
+            data-cy="nonResidentalEstateId"
+            name="nonResidentalEstateId"
+            formControlName="nonResidentalEstateId"
+            [compareWith]="compareNonResidentalEstates"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="nonResidentalEstatesOption" *ngFor="let nonResidentalEstatesOption of nonResidentalEstatesSharedCollection">
+              {{ nonResidentalEstatesOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="agencyCourseWorkApp.comercialEventsOfNonResidentalEstate.clientId" for="field_clientId"
+            >Client Id</label
+          >
+          <select
+            class="form-control"
+            id="field_clientId"
+            data-cy="clientId"
+            name="clientId"
+            formControlName="clientId"
+            [compareWith]="compareClients"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="clientsOption" *ngFor="let clientsOption of clientsSharedCollection">{{ clientsOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Отмена</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Сохранить</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
