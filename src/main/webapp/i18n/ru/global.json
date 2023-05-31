@@ -7,20 +7,20 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Сущности",
-        "cities": "Cities",
-        "streetsOfCities": "Streets Of Cities",
-        "addresses": "Addresses",
-        "typesOfResidentalEstate": "Types Of Residental Estate",
-        "statusesOfResidentalEstate": "Statuses Of Residental Estate",
-        "purposesOfNonResidentalEstate": "Purposes Of Non Residental Estate",
-        "buildingTypeOfNonResidentalEstate": "Building Type Of Non Residental Estate",
-        "typesOfCommercialEvents": "Types Of Commercial Events",
-        "clients": "Clients",
-        "residentalEstates": "Residental Estates",
-        "nonResidentalEstates": "Non Residental Estates",
-        "comercialEventsOfNonResidentalEstate": "Comercial Events Of Non Residental Estate",
-        "comercialEventsOfResidentalEstate": "Comercial Events Of Residental Estate",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "cities": "Города",
+        "streetsOfCities": "Улицы города",
+        "addresses": "Адреса",
+        "typesOfResidentalEstate": "Типы жилой недвижимости",
+        "statusesOfResidentalEstate": "Статусы жилой недвижимости",
+        "purposesOfNonResidentalEstate": "Назначения нежилой недвижимости",
+        "buildingTypeOfNonResidentalEstate": "Типы зданий нежилой недвижимости",
+        "typesOfCommercialEvents": "Типы коммерческих событий",
+        "clients": "Клиенты",
+        "residentalEstates": "Жилая недвижимость",
+        "nonResidentalEstates": "Нежилая недвижимость",
+        "comercialEventsOfNonResidentalEstate": "Коммерческие события нежилой недвижимости",
+        "comercialEventsOfResidentalEstate": "Коммерческие события жилой недвижимости",
+        "jhipster-needle-menu-add-entry": ""
       },
       "account": {
         "main": "Профиль",
@@ -155,5 +155,5 @@
       "not.image": "Файл должен был быть изображением, но было установлено, что \"{{ fileType }}\""
     }
   },
-  "footer": "Это ваш футтер"
+  "footer": ""
 }

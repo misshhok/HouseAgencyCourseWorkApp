@@ -2,27 +2,27 @@
   "agencyCourseWorkApp": {
     "comercialEventsOfResidentalEstate": {
       "home": {
-        "title": "Comercial Events Of Residental Estates",
+        "title": "Коммерческие события жилой недвижимости",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Comercial Events Of Residental Estate",
-        "createOrEditLabel": "Создать или отредактировать Comercial Events Of Residental Estate",
-        "notFound": "Comercial Events Of Residental Estates не найдено"
+        "createLabel": "Создать новое событие жилой недвижимости",
+        "createOrEditLabel": "Создать или отредактировать коммерческое событие жилой недвижимости",
+        "notFound": "Коммерческое событие жилой недвижимости не найдено"
       },
-      "created": "Новый Comercial Events Of Residental Estate создан с идентификатором {{ param }}",
-      "updated": "Comercial Events Of Residental Estate обновлен с идентификатором {{ param }}",
-      "deleted": "Comercial Events Of Residental Estate удален с идентификатором {{ param }}",
+      "created": "Новое коммерческое событие жилой недвижимости создано с идентификатором {{ param }}",
+      "updated": "Коммерческое событие жилой недвижимости обновлено с идентификатором {{ param }}",
+      "deleted": "Коммерческое событие жилой недвижимости удалено с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Comercial Events Of Residental Estate {{ id }}?"
+        "question": "Вы уверены что хотите удалить коммерческое событие жилой недвижимости {{ id }}?"
       },
       "detail": {
-        "title": "Comercial Events Of Residental Estate"
+        "title": "Коммерческое событие жилой недвижимости"
       },
       "id": "ID",
-      "agentNotes": "Agent Notes",
-      "dateOfEvent": "Date Of Event",
-      "typeOfCommercialEventId": "Type Of Commercial Event Id",
-      "clientId": "Client Id",
-      "residentalEstateId": "Residental Estate Id"
+      "agentNotes": "Записки агента",
+      "dateOfEvent": "Дата события",
+      "typeOfCommercialEventId": "Тип события коммерческой недвижимости",
+      "clientId": "ID клиента",
+      "residentalEstateId": "ID жилой недвижимости"
     }
   }
 }

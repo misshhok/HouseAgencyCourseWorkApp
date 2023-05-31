@@ -41,7 +41,6 @@ management:
             'loggers',
             'prometheus',
             'threaddump',
-            'liquibase',
           ]
   endpoint:
     health:

@@ -17,9 +17,7 @@ public class NonResidentalEstates implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "price", precision = 21, scale = 2)
@@ -34,17 +32,20 @@ public class NonResidentalEstates implements Serializable {
     @Column(name = "total_space")
     private Double totalSpace;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "purpose_of_non_residental_estate_id")
     private PurposesOfNonResidentalEstate purposeOfNonResidentalEstateId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "building_type_of_non_residental_estate_id")
     private BuildingTypeOfNonResidentalEstate buildingTypeOfNonResidentalEstateId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "address_id")
     @JsonIgnoreProperties(value = { "streetOfCityId" }, allowSetters = true)
     private Addresses addressId;
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here
+  // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
         return this.id;

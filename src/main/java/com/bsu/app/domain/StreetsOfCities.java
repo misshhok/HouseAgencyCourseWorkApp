@@ -1,31 +1,41 @@
 package com.bsu.app.domain;
 
-import java.io.Serializable;
-import javax.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
-/**
- * A StreetsOfCities.
- */
+@Getter
+@Setter
 @Entity
 @Table(name = "streets_of_cities")
-@SuppressWarnings("common-java:DuplicatedBlocks")
-public class StreetsOfCities implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-
+public class StreetsOfCities {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
+    @Size(max = 255)
     @Column(name = "title")
     private String title;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "city_id")
     private Cities cityId;
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here
+    @OneToMany(mappedBy = "streetOfCityId")
+    private Set<Addresses> addresses = new LinkedHashSet<>();
 
     public Long getId() {
         return this.id;
@@ -43,7 +53,6 @@ public class StreetsOfCities implements Serializable {
     public String getTitle() {
         return this.title;
     }
-
     public StreetsOfCities title(String title) {
         this.setTitle(title);
         return this;
@@ -66,31 +75,4 @@ public class StreetsOfCities implements Serializable {
         return this;
     }
 
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof StreetsOfCities)) {
-            return false;
-        }
-        return id != null && id.equals(((StreetsOfCities) o).id);
-    }
-
-    @Override
-    public int hashCode() {
-        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
-        return getClass().hashCode();
-    }
-
-    // prettier-ignore
-    @Override
-    public String toString() {
-        return "StreetsOfCities{" +
-            "id=" + getId() +
-            ", title='" + getTitle() + "'" +
-            "}";
-    }
 }

@@ -16,9 +16,7 @@ public class ComercialEventsOfNonResidentalEstate implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "agent_notes")
@@ -27,17 +25,20 @@ public class ComercialEventsOfNonResidentalEstate implements Serializable {
     @Column(name = "date_of_event")
     private LocalDate dateOfEvent;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_of_commercial_event_id")
     private TypesOfCommercialEvents typeOfCommercialEventId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "non_residental_estate_id")
     @JsonIgnoreProperties(
         value = { "purposeOfNonResidentalEstateId", "buildingTypeOfNonResidentalEstateId", "addressId" },
         allowSetters = true
     )
     private NonResidentalEstates nonResidentalEstateId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
     private Clients clientId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

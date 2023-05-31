@@ -16,9 +16,7 @@ public class ComercialEventsOfResidentalEstate implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "agent_notes")
@@ -27,13 +25,16 @@ public class ComercialEventsOfResidentalEstate implements Serializable {
     @Column(name = "date_of_event")
     private LocalDate dateOfEvent;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "type_of_commercial_event_id")
     private TypesOfCommercialEvents typeOfCommercialEventId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id")
     private Clients clientId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "residental_estate_id")
     @JsonIgnoreProperties(value = { "addressId", "typeOfResidentalEstateId", "statusOfResidentalEstateId" }, allowSetters = true)
     private ResidentalEstates residentalEstateId;
 

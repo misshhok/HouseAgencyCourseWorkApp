@@ -2,27 +2,27 @@
   "agencyCourseWorkApp": {
     "comercialEventsOfNonResidentalEstate": {
       "home": {
-        "title": "Comercial Events Of Non Residental Estates",
+        "title": "Коммерческие события нежилой недвижимости",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Comercial Events Of Non Residental Estate",
-        "createOrEditLabel": "Создать или отредактировать Comercial Events Of Non Residental Estate",
-        "notFound": "Comercial Events Of Non Residental Estates не найдено"
+        "createLabel": "Создать новое событие нежилой недвижимости",
+        "createOrEditLabel": "Создать или отредактировать коммерческое событие нежилой недвижимости",
+        "notFound": "Коммерческое событие нежилой недвижимости не найдено"
       },
-      "created": "Новый Comercial Events Of Non Residental Estate создан с идентификатором {{ param }}",
-      "updated": "Comercial Events Of Non Residental Estate обновлен с идентификатором {{ param }}",
-      "deleted": "Comercial Events Of Non Residental Estate удален с идентификатором {{ param }}",
+      "created": "Новое коммерческое событие нежилой недвижимости создано с идентификатором {{ param }}",
+      "updated": "Коммерческое событие нежилой недвижимости обновлено с идентификатором {{ param }}",
+      "deleted": "Коммерческое событие нежилой недвижимости удалено с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Comercial Events Of Non Residental Estate {{ id }}?"
+        "question": "Вы уверены что хотите удалить коммерческое событие нежилой недвижимости {{ id }}?"
       },
       "detail": {
-        "title": "Comercial Events Of Non Residental Estate"
+        "title": "Коммерческое событие нежилой недвижимости"
       },
       "id": "ID",
-      "agentNotes": "Agent Notes",
-      "dateOfEvent": "Date Of Event",
-      "typeOfCommercialEventId": "Type Of Commercial Event Id",
-      "nonResidentalEstateId": "Non Residental Estate Id",
-      "clientId": "Client Id"
+      "agentNotes": "Записки агента",
+      "dateOfEvent": "Дата события",
+      "typeOfCommercialEventId": "Тип события коммерческой недвижимости",
+      "nonResidentalEstateId": "ID нежилой недвижимости",
+      "clientId": "ID клиента"
     }
   }
 }

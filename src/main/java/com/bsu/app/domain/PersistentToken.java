@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
  * @see com.bsu.app.security.PersistentTokenRememberMeServices
  */
 @Entity
-@Table(name = "jhi_persistent_token")
+@Table(name = "persistent_token")
 public class PersistentToken implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -40,9 +40,17 @@ public class PersistentToken implements Serializable {
     @Column(name = "user_agent")
     private String userAgent;
 
-    @JsonIgnore
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
     private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user1) {
+        this.user = user1;
+    }
 
     public String getSeries() {
         return series;
@@ -86,14 +94,6 @@ public class PersistentToken implements Serializable {
         } else {
             this.userAgent = userAgent;
         }
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     @Override

@@ -17,9 +17,7 @@ public class ResidentalEstates implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "living_space")
@@ -49,14 +47,17 @@ public class ResidentalEstates implements Serializable {
     @Column(name = "price", precision = 21, scale = 2)
     private BigDecimal price;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "address_id")
     @JsonIgnoreProperties(value = { "streetOfCityId" }, allowSetters = true)
     private Addresses addressId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "type_of_residental_estate_id")
     private TypesOfResidentalEstate typeOfResidentalEstateId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "status_of_residental_estate_id")
     private StatusesOfResidentalEstate statusOfResidentalEstateId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
