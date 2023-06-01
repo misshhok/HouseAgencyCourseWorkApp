@@ -2,34 +2,34 @@
   "agencyCourseWorkApp": {
     "residentalEstates": {
       "home": {
-        "title": "Residental Estates",
+        "title": "Жилая недвижимость",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Residental Estates",
-        "createOrEditLabel": "Создать или отредактировать Residental Estates",
-        "notFound": "Residental Estates не найдено"
+        "createLabel": "Создать новый объект жилой недвижимости",
+        "createOrEditLabel": "Создать или отредактировать объект жилой недвижимости",
+        "notFound": "Объект жилой недвижимости не найден"
       },
-      "created": "Новый Residental Estates создан с идентификатором {{ param }}",
-      "updated": "Residental Estates обновлен с идентификатором {{ param }}",
-      "deleted": "Residental Estates удален с идентификатором {{ param }}",
+      "created": "Объект жилой недвижимости создан с идентификатором {{ param }}",
+      "updated": "Объект жилой недвижимости обновлен с идентификатором {{ param }}",
+      "deleted": "Объект жилой недвижимости удален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Residental Estates {{ id }}?"
+        "question": "Вы уверены что хотите удалить объект жилой недвижимости {{ id }}?"
       },
       "detail": {
-        "title": "Residental Estates"
+        "title": "Объект жилой недвижимости"
       },
       "id": "ID",
-      "livingSpace": "Living Space",
-      "cadastralNumber": "Cadastral Number",
-      "commissioningDate": "Commissioning Date",
-      "numberOfRooms": "Number Of Rooms",
-      "furnishType": "Furnish Type",
-      "hasBalcony": "Has Balcony",
-      "bathroomType": "Bathroom Type",
-      "ceilingHeight": "Ceiling Height",
-      "price": "Price",
-      "addressId": "Address Id",
-      "typeOfResidentalEstateId": "Type Of Residental Estate Id",
-      "statusOfResidentalEstateId": "Status Of Residental Estate Id"
+      "livingSpace": "Жилая площадь",
+      "cadastralNumber": "Кадастровый номер",
+      "commissioningDate": "Дата ввода в эксплуатацию",
+      "numberOfRooms": "Количество комнат",
+      "furnishType": "Тип отделки",
+      "hasBalcony": "Наличие балкона",
+      "bathroomType": "Тип санузла",
+      "ceilingHeight": "Высота потолков",
+      "price": "Цена",
+      "addressId": "ID адреса",
+      "typeOfResidentalEstateId": "ID типа жилой недвижимости",
+      "statusOfResidentalEstateId": "ID статуса жилой недвижимости"
     }
   }
 }

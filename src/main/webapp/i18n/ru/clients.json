@@ -2,26 +2,26 @@
   "agencyCourseWorkApp": {
     "clients": {
       "home": {
-        "title": "Clients",
+        "title": "Клиенты",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Clients",
-        "createOrEditLabel": "Создать или отредактировать Clients",
-        "notFound": "Clients не найдено"
+        "createLabel": "Создать нового клиента",
+        "createOrEditLabel": "Создать или отредактировать клиента",
+        "notFound": "Клиент не найдено"
       },
-      "created": "Новый Clients создан с идентификатором {{ param }}",
-      "updated": "Clients обновлен с идентификатором {{ param }}",
-      "deleted": "Clients удален с идентификатором {{ param }}",
+      "created": "Новый клиент создан с идентификатором {{ param }}",
+      "updated": "Клиент обновлен с идентификатором {{ param }}",
+      "deleted": "Клиент удален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Clients {{ id }}?"
+        "question": "Вы уверены что хотите удалить клиента {{ id }}?"
       },
       "detail": {
-        "title": "Clients"
+        "title": "Клиент"
       },
       "id": "ID",
-      "name": "Name",
-      "surename": "Surename",
-      "patronymic": "Patronymic",
-      "phoneNumber": "Phone Number"
+      "name": "Имя",
+      "surename": "Фамилия",
+      "patronymic": "Отчество",
+      "phoneNumber": "Номер телефона"
     }
   }
 }

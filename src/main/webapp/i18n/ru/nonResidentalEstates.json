@@ -2,29 +2,29 @@
   "agencyCourseWorkApp": {
     "nonResidentalEstates": {
       "home": {
-        "title": "Non Residental Estates",
+        "title": "Нежилая недвижимость",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Non Residental Estates",
-        "createOrEditLabel": "Создать или отредактировать Non Residental Estates",
-        "notFound": "Non Residental Estates не найдено"
+        "createLabel": "Создать новый объект нежилой недвижимости",
+        "createOrEditLabel": "Создать или отредактировать объект нежилой недвижимости",
+        "notFound": "Объект нежилой недвижимости не найден"
       },
-      "created": "Новый Non Residental Estates создан с идентификатором {{ param }}",
-      "updated": "Non Residental Estates обновлен с идентификатором {{ param }}",
-      "deleted": "Non Residental Estates удален с идентификатором {{ param }}",
+      "created": "Объект нежилой недвижимости создан с идентификатором {{ param }}",
+      "updated": "Объект нежилой недвижимости обновлен с идентификатором {{ param }}",
+      "deleted": "Объект нежилой недвижимости удален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Non Residental Estates {{ id }}?"
+        "question": "Вы уверены что хотите удалить объект нежилой недвижимости {{ id }}?"
       },
       "detail": {
-        "title": "Non Residental Estates"
+        "title": "Объект нежилой недвижимости"
       },
       "id": "ID",
-      "price": "Price",
-      "commissioningDate": "Commissioning Date",
-      "cadastralNumber": "Cadastral Number",
-      "totalSpace": "Total Space",
-      "purposeOfNonResidentalEstateId": "Purpose Of Non Residental Estate Id",
-      "buildingTypeOfNonResidentalEstateId": "Building Type Of Non Residental Estate Id",
-      "addressId": "Address Id"
+      "price": "Цена",
+      "commissioningDate": "Дата ввода в эксплуатацию",
+      "cadastralNumber": "Кадастровый номер",
+      "totalSpace": "Общая площадь",
+      "purposeOfNonResidentalEstateId": "Назначение недвижимости",
+      "buildingTypeOfNonResidentalEstateId": "ID типа здания",
+      "addressId": "ID адреса"
     }
   }
 }

@@ -2,23 +2,23 @@
   "agencyCourseWorkApp": {
     "buildingTypeOfNonResidentalEstate": {
       "home": {
-        "title": "Building Type Of Non Residental Estates",
+        "title": "Типы зданий нежилой недвижимости",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Building Type Of Non Residental Estate",
-        "createOrEditLabel": "Создать или отредактировать Building Type Of Non Residental Estate",
-        "notFound": "Building Type Of Non Residental Estates не найдено"
+        "createLabel": "Создать новый тип здания нежилой недвижимости",
+        "createOrEditLabel": "Создать или отредактировать тип здания нежилой недвижимости",
+        "notFound": "Тип здания нежилой недвижимости не найден"
       },
-      "created": "Новый Building Type Of Non Residental Estate создан с идентификатором {{ param }}",
-      "updated": "Building Type Of Non Residental Estate обновлен с идентификатором {{ param }}",
-      "deleted": "Building Type Of Non Residental Estate удален с идентификатором {{ param }}",
+      "created": "Новый тип здания нежилой недвижимости создан с идентификатором {{ param }}",
+      "updated": "Тип здания нежилой недвижимости обновлен с идентификатором {{ param }}",
+      "deleted": "Тип здания нежилой недвижимостиудален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Building Type Of Non Residental Estate {{ id }}?"
+        "question": "Вы уверены что хотите удалить тип здания нежилой недвижимости {{ id }}?"
       },
       "detail": {
-        "title": "Building Type Of Non Residental Estate"
+        "title": "Тип здания нежилой недвижимости"
       },
       "id": "ID",
-      "title": "Title"
+      "title": "Название"
     }
   }
 }

@@ -2,24 +2,24 @@
   "agencyCourseWorkApp": {
     "addresses": {
       "home": {
-        "title": "Addresses",
+        "title": "Адреса недвижимости",
         "refreshListLabel": "Обновить список",
-        "createLabel": "Создать новый Addresses",
-        "createOrEditLabel": "Создать или отредактировать Addresses",
-        "notFound": "Addresses не найдено"
+        "createLabel": "Создать новый адрес",
+        "createOrEditLabel": "Создать или отредактировать адрес",
+        "notFound": "Адрес не найден"
       },
-      "created": "Новый Addresses создан с идентификатором {{ param }}",
-      "updated": "Addresses обновлен с идентификатором {{ param }}",
-      "deleted": "Addresses удален с идентификатором {{ param }}",
+      "created": "Новый адрес создан с идентификатором {{ param }}",
+      "updated": "Адрес обновлен с идентификатором {{ param }}",
+      "deleted": "Адрес удален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Addresses {{ id }}?"
+        "question": "Вы уверены что хотите удалить адрес {{ id }}?"
       },
       "detail": {
-        "title": "Addresses"
+        "title": "Адрес"
       },
       "id": "ID",
-      "houseNumber": "House Number",
-      "streetOfCityId": "Street Of City Id"
+      "houseNumber": "номер дома",
+      "streetOfCityId": "ID улицы города"
     }
   }
 }
