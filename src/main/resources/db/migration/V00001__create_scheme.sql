@@ -113,8 +113,7 @@ create table if not exists public.types_of_commercial_events
     id          bigserial not null
         primary key,
     title       varchar(255),
-    description varchar(255),
-    estate_type varchar(255)
+    description varchar(255)
 );
 
 create table if not exists public.clients

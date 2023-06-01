@@ -24,14 +24,17 @@
             for="field_agentNotes"
             >Agent Notes</label
           >
-          <input
+          <textarea
+            cols="40"
+            rows="5"
             type="text"
             class="form-control"
             name="agentNotes"
             id="field_agentNotes"
             data-cy="agentNotes"
-            formControlName="agentNotes"
-          />
+            formControlName="agentNotes">
+
+          </textarea>
         </div>
 
         <div class="row mb-3">
@@ -78,7 +81,7 @@
               [ngValue]="typesOfCommercialEventsOption"
               *ngFor="let typesOfCommercialEventsOption of typesOfCommercialEventsSharedCollection"
             >
-              {{ typesOfCommercialEventsOption.id }}
+              {{ typesOfCommercialEventsOption.title }}
             </option>
           </select>
         </div>
@@ -118,7 +121,7 @@
             [compareWith]="compareClients"
           >
             <option [ngValue]="null"></option>
-            <option [ngValue]="clientsOption" *ngFor="let clientsOption of clientsSharedCollection">{{ clientsOption.id }}</option>
+            <option [ngValue]="clientsOption" *ngFor="let clientsOption of clientsSharedCollection">{{ clientsOption.surename+" "+ clientsOption.name+" "+clientsOption.patronymic }}</option>
           </select>
         </div>
       </div>

@@ -23,8 +23,6 @@ public class TypesOfCommercialEvents implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "estate_type")
-    private String estateType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -67,18 +65,8 @@ public class TypesOfCommercialEvents implements Serializable {
         this.description = description;
     }
 
-    public String getEstateType() {
-        return this.estateType;
-    }
 
-    public TypesOfCommercialEvents estateType(String estateType) {
-        this.setEstateType(estateType);
-        return this;
-    }
 
-    public void setEstateType(String estateType) {
-        this.estateType = estateType;
-    }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -106,7 +94,6 @@ public class TypesOfCommercialEvents implements Serializable {
             "id=" + getId() +
             ", title='" + getTitle() + "'" +
             ", description='" + getDescription() + "'" +
-            ", estateType='" + getEstateType() + "'" +
             "}";
     }
 }

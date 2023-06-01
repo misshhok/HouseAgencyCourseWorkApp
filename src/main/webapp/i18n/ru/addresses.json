@@ -18,8 +18,8 @@
         "title": "Адрес"
       },
       "id": "ID",
-      "houseNumber": "номер дома",
-      "streetOfCityId": "ID улицы города"
+      "houseNumber": "Номер дома",
+      "streetOfCityId": "Улица города"
     }
   }
 }

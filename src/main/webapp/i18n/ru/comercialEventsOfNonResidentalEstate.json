@@ -22,7 +22,7 @@
       "dateOfEvent": "Дата события",
       "typeOfCommercialEventId": "Тип события коммерческой недвижимости",
       "nonResidentalEstateId": "ID нежилой недвижимости",
-      "clientId": "ID клиента"
+      "clientId": "ФИО клиента"
     }
   }
 }

@@ -28,8 +28,8 @@
       "ceilingHeight": "Высота потолков",
       "price": "Цена",
       "addressId": "ID адреса",
-      "typeOfResidentalEstateId": "ID типа жилой недвижимости",
-      "statusOfResidentalEstateId": "ID статуса жилой недвижимости"
+      "typeOfResidentalEstateId": "Тип жилой недвижимости",
+      "statusOfResidentalEstateId": "Статус жилой недвижимости"
     }
   }
 }

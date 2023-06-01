@@ -23,7 +23,7 @@
       "cadastralNumber": "Кадастровый номер",
       "totalSpace": "Общая площадь",
       "purposeOfNonResidentalEstateId": "Назначение недвижимости",
-      "buildingTypeOfNonResidentalEstateId": "ID типа здания",
+      "buildingTypeOfNonResidentalEstateId": "Тип здания",
       "addressId": "ID адреса"
     }
   }

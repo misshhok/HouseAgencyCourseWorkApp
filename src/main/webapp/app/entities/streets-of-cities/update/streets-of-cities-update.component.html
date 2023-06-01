@@ -33,7 +33,7 @@
             [compareWith]="compareCities"
           >
             <option [ngValue]="null"></option>
-            <option [ngValue]="citiesOption" *ngFor="let citiesOption of citiesSharedCollection">{{ citiesOption.id }}</option>
+            <option [ngValue]="citiesOption" *ngFor="let citiesOption of citiesSharedCollection">{{ citiesOption.title }}</option>
           </select>
         </div>
       </div>

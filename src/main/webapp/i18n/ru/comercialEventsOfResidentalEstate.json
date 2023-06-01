@@ -21,7 +21,7 @@
       "agentNotes": "Записки агента",
       "dateOfEvent": "Дата события",
       "typeOfCommercialEventId": "Тип события коммерческой недвижимости",
-      "clientId": "ID клиента",
+      "clientId": "ФИО клиента",
       "residentalEstateId": "ID жилой недвижимости"
     }
   }
