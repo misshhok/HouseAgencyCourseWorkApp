@@ -22,9 +22,12 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import static com.bsu.app.security.AuthoritiesConstants.ADMIN;
+import static com.bsu.app.security.AuthoritiesConstants.USER;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
@@ -112,13 +115,27 @@ public class AgencyCourseWorkApp implements CommandLineRunner {
         Authority adminAuthority = new Authority();
         adminAuthority.setName(ADMIN);
         if (!authorityRepository.findByName(ADMIN).isPresent()) {
-            authorityRepository.save(adminAuthority);
+            adminAuthority = authorityRepository.save(adminAuthority);
         }
         AdminUserDTO adminUserDTO = new AdminUserDTO();
         adminUserDTO.setLogin("admin");
         adminUserDTO.setEmail("admin@mail.ru");
         adminUserDTO.setActivated(true);
+        adminUserDTO.setAuthorities(Set.of(ADMIN));
         userService.createUserWithPassword(adminUserDTO, "admin");
+    }
+    private void createDemoUserIfNotExists() {
+        Authority userAuthority = new Authority();
+        userAuthority.setName(USER);
+        if (!authorityRepository.findByName(USER).isPresent()) {
+            userAuthority = authorityRepository.save(userAuthority);
+        }
+        AdminUserDTO userDTO = new AdminUserDTO();
+        userDTO.setLogin("user");
+        userDTO.setEmail("user@mail.ru");
+        userDTO.setActivated(true);
+        userDTO.setAuthorities(Set.of(USER));
+        userService.createUserWithPassword(userDTO, "user");
     }
 
     /**
@@ -130,6 +147,7 @@ public class AgencyCourseWorkApp implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         createAdminIfNotExists();
+        createDemoUserIfNotExists();
         logApplicationStartup(env);
     }
 }

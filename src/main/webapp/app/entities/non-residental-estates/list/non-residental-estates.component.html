@@ -9,6 +9,7 @@
       </button>
 
       <button
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
         id="jh-create-entity"
         data-cy="entityCreateButton"
         class="btn btn-primary jh-create-entity create-non-residental-estates"
@@ -135,6 +136,7 @@
               </button>
 
               <button
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
                 type="submit"
                 [routerLink]="['/non-residental-estates', nonResidentalEstates.id, 'edit']"
                 class="btn btn-primary btn-sm"
@@ -144,7 +146,7 @@
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Изменить</span>
               </button>
 
-              <button type="submit" (click)="delete(nonResidentalEstates)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+              <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" (click)="delete(nonResidentalEstates)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
                 <fa-icon icon="times"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Удалить</span>
               </button>

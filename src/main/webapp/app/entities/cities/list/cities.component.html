@@ -9,6 +9,7 @@
       </button>
 
       <button
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
         id="jh-create-entity"
         data-cy="entityCreateButton"
         class="btn btn-primary jh-create-entity create-cities"
@@ -62,12 +63,12 @@
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Просмотр</span>
               </button>
 
-              <button type="submit" [routerLink]="['/cities', cities.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+              <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" [routerLink]="['/cities', cities.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
                 <fa-icon icon="pencil-alt"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Изменить</span>
               </button>
 
-              <button type="submit" (click)="delete(cities)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+              <button *jhiHasAnyAuthority="'ROLE_ADMIN'" type="submit" (click)="delete(cities)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
                 <fa-icon icon="times"></fa-icon>
                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Удалить</span>
               </button>

@@ -15,8 +15,6 @@ public class TypesOfCommercialEventsDTO implements Serializable {
 
     private String description;
 
-    private String estateType;
-
     public Long getId() {
         return id;
     }
@@ -41,13 +39,6 @@ public class TypesOfCommercialEventsDTO implements Serializable {
         this.description = description;
     }
 
-    public String getEstateType() {
-        return estateType;
-    }
-
-    public void setEstateType(String estateType) {
-        this.estateType = estateType;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -77,7 +68,6 @@ public class TypesOfCommercialEventsDTO implements Serializable {
             "id=" + getId() +
             ", title='" + getTitle() + "'" +
             ", description='" + getDescription() + "'" +
-            ", estateType='" + getEstateType() + "'" +
             "}";
     }
 }

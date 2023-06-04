@@ -100,9 +100,6 @@ public class TypesOfCommercialEventsQueryService extends QueryService<TypesOfCom
                 specification =
                     specification.and(buildStringSpecification(criteria.getDescription(), TypesOfCommercialEvents_.description));
             }
-            if (criteria.getEstateType() != null) {
-                specification = specification.and(buildStringSpecification(criteria.getEstateType(), TypesOfCommercialEvents_.estateType));
-            }
         }
         return specification;
     }

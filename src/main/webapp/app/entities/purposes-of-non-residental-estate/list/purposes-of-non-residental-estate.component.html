@@ -9,6 +9,7 @@
       </button>
 
       <button
+        *jhiHasAnyAuthority="'ROLE_ADMIN'"
         id="jh-create-entity"
         data-cy="entityCreateButton"
         class="btn btn-primary jh-create-entity create-purposes-of-non-residental-estate"
@@ -78,6 +79,7 @@
               </button>
 
               <button
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
                 type="submit"
                 [routerLink]="['/purposes-of-non-residental-estate', purposesOfNonResidentalEstate.id, 'edit']"
                 class="btn btn-primary btn-sm"
@@ -88,6 +90,7 @@
               </button>
 
               <button
+                *jhiHasAnyAuthority="'ROLE_ADMIN'"
                 type="submit"
                 (click)="delete(purposesOfNonResidentalEstate)"
                 class="btn btn-danger btn-sm"

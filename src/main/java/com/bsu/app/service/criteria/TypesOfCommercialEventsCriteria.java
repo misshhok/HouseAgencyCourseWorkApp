@@ -27,8 +27,6 @@ public class TypesOfCommercialEventsCriteria implements Serializable, Criteria {
 
     private StringFilter description;
 
-    private StringFilter estateType;
-
     private Boolean distinct;
 
     public TypesOfCommercialEventsCriteria() {}
@@ -37,7 +35,6 @@ public class TypesOfCommercialEventsCriteria implements Serializable, Criteria {
         this.id = other.id == null ? null : other.id.copy();
         this.title = other.title == null ? null : other.title.copy();
         this.description = other.description == null ? null : other.description.copy();
-        this.estateType = other.estateType == null ? null : other.estateType.copy();
         this.distinct = other.distinct;
     }
 
@@ -91,20 +88,6 @@ public class TypesOfCommercialEventsCriteria implements Serializable, Criteria {
         this.description = description;
     }
 
-    public StringFilter getEstateType() {
-        return estateType;
-    }
-
-    public StringFilter estateType() {
-        if (estateType == null) {
-            estateType = new StringFilter();
-        }
-        return estateType;
-    }
-
-    public void setEstateType(StringFilter estateType) {
-        this.estateType = estateType;
-    }
 
     public Boolean getDistinct() {
         return distinct;
@@ -127,14 +110,13 @@ public class TypesOfCommercialEventsCriteria implements Serializable, Criteria {
             Objects.equals(id, that.id) &&
             Objects.equals(title, that.title) &&
             Objects.equals(description, that.description) &&
-            Objects.equals(estateType, that.estateType) &&
             Objects.equals(distinct, that.distinct)
         );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, estateType, distinct);
+        return Objects.hash(id, title, description, distinct);
     }
 
     // prettier-ignore
@@ -144,7 +126,6 @@ public class TypesOfCommercialEventsCriteria implements Serializable, Criteria {
             (id != null ? "id=" + id + ", " : "") +
             (title != null ? "title=" + title + ", " : "") +
             (description != null ? "description=" + description + ", " : "") +
-            (estateType != null ? "estateType=" + estateType + ", " : "") +
             (distinct != null ? "distinct=" + distinct + ", " : "") +
             "}";
     }
